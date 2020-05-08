@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1073811980858",
+    "firebase_url": "https://sorm-49b74.firebaseio.com",
+    "project_id": "sorm-49b74",
+    "storage_bucket": "sorm-49b74.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073811980858:android:b580ffcfda58b8a556eb03",
+        "android_client_info": {
+          "package_name": "sk.tuke.fei.kpi.trackme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073811980858-8422nklml22ouhhnacdcuta31gtdf6ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbDp6MWfcvw_8VOwvvMVurjLYT6DCsSbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073811980858-8422nklml22ouhhnacdcuta31gtdf6ju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

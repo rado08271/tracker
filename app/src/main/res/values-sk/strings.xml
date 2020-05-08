@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string_agree_battery_consent">Uvedomujem si zvysenu zataz na baterku</string>
+    <string name="string_agree_permissions_consent">Vsetky potrebne pristupy som povolil</string>
+    <string name="string_agree_data_consent">Suhlasim so zbieranim udajov</string>
+    <string name="string_legal_text">"Ďakujeme za účasť v zbieraní reálnych dát o vašom pohybe. Prosím povoľte prístup k lokácií a sledovaniu aktivity. Prosím zapnite si vaše GPS. Dáta sú zbierané z dôvodu získania dostatočného počtu informácií pre porovnávanie výsedkov našej práce sústrediacej sa na pohyb obyvateľov. Snažili sme sa simulovať pohyb obyvateľov a teraz by sme tieto zozbierané dáta radi porovnali s reálnymi dátami. Kedže ich nemáme tak sme sa rozhodli si takéto dáta o osobách zozbierať. Dôvodom je vytvorenie záveru a porovnania v našej práci. Dáta sú bezpečne uložené na úložiskách Google. Nemáme dôvody dáta využivať proti vám. Zbierame vaše pozíciu na mape, aktuálny stav, časovú stop kedy ste sa na tom mieste nachádzali a vaše ID. Tieto dáta budú využité iba na porovnanie. Je to vaše dobrovoľné rozhodnutie a nenesieme žiadnu zodpovednosť za neprijemnosti ktoré vám tieto akcie môžu spôsobiť. Dopredu sa ospravedlňujeme ak sa nejaké vyskytnú. Odporúčame občas aplikáciu vypnúť. Hlavne mimo presunov. Aplikácia vykonáva akcie ktoré znižujú životnosť batérie. Zbierame dáta iba na základe špecifických požiadavok. Ak sa nehýbete dlhšiu dobu tak žiadne dáta nie sú zbierané. Nezbierame dáta na pozadí. V ideálnom prípade, majte aplikáciu zapnutú alebo na pozadí. Ďakujeme za účasť a prajeme veľa zábavy. "</string>
+    <string name="string_id_start_string">Najprv stlačte štart...</string>
+    <string name="string_waiting_for_data">Čakám na dáta...</string>
+    <string name="string_data_not_collected_currently">Dáta práve nie sú zbierané</string>
+    <string name="string_agree_next">ĎALEJ</string>
+    <string name="string_current_stop">STOP</string>
+    <string name="string_current_start">ŠTART</string>
+</resources>

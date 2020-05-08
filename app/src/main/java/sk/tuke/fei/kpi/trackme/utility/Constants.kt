@@ -1,0 +1,22 @@
+package sk.tuke.fei.kpi.trackme.utility
+
+object Constants {
+    const val DETECT_SERVICE_INTENT_TAG = "DetectionService"
+    const val BACKGROUND_LOCATION_INTENT_TAG = "BackgroundLocationService"
+
+    const val CACHE_CHANGE_ACTIVITY = "CHANGE_ACTIVITY"
+    const val CACHE_NEW_ACTIVITY = "CACHE_NEW_ACTIVITY"
+    const val CACHE_CONSENT_GIVEN = "CACHE_CONSENT_GIVEN"
+    const val CACHE_STARTED_MOVEMENT = "CACHE_STARTED_MOVEMENT"
+    const val CACHE_USER_EXISTS = "CACHE_USER_EXISTS"
+    const val CACHE_USER_ID = "CACHE_USER_ID"
+    const val CACHE_CURRENT_STATE = "CACHE_CURRENT_STATE"
+    const val CACHE_CHANGED_STATE_TIMESTAMP = "CACHE_CHANGED_STATE_TIMESTAMP"
+    const val CACHE_CURRENT_TIMER = "CACHE_CURRENT_TIMER"
+
+    const val BACKGROUND_LOCATION_REQUEST_TIMEOUT = 10000L
+    const val SEND_DATA_INTERVAL = 20000L
+    const val INACTIVE_MAX_INTERVAL = 20000L
+
+
+}

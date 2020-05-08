@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">TrackMe</string>
+    <string name="string_current_start">START</string>
+    <string name="string_current_stop">STOP</string>
+    <string name="string_agree_next">DALEJ</string>
+    <string name="string_agree_permissions_consent">Vsetky potrebne pristupy som povolil</string>
+    <string name="string_agree_data_consent">Suhlasim so zbieranim udajov</string>
+    <string name="string_id_start_string">Please start first...</string>
+    <string name="string_waiting_for_data">Waiting for data...</string>
+    <string name="string_state_in_vehicle" translatable="false">IN VEHICLE</string>
+    <string name="string_state_on_bicycle" translatable="false">ON BICYCLE</string>
+    <string name="string_state_on_foot" translatable="false">ON FOOT</string>
+    <string name="string_state_running" translatable="false">RUNNING</string>
+    <string name="string_state_still" translatable="false">STILL</string>
+    <string name="string_state_tilting" translatable="false">TILTING</string>
+    <string name="string_state_unknown" translatable="false">UNKNOWN</string>
+    <string name="string_state_walking" translatable="false">WALKING</string>
+    <string name="string_data_not_collected_currently">Data are currently not collected</string>
+    <string name="string_agree_battery_consent">Uvedomujem si zvysenu zataz na baterku</string>
+    <string name="string_legal_text">"Thank you for taking part in collecting real data about movement. Please provide access to location and activity tracking. Please turn your GPS on. Data are collected for purposes of acquiring possible comparison for our thesis about movement of residents. We were trying to simulate movement and are willing to compare results of simulation with real data collected by you, volunteer. These data solely purpose is to get the final statement for thesis. Data are securely stored on Google storage spaces. We have no intention of using your data against you. What we collect is you coordinates on map, your current state and you timestamp as well as your ID. These data will be then used for comparison. This is your voluntary decision, and we do not bear any unconfortable situations it might arise, but we are sorry if any occurs. More importantly. Close application from time to time. It causes your battery life to decrease and it drains too much battery. We collect data on specific basis. We do not collect data if you are not moving for longer period of time. We do not collect data in background. Preferably have your application in foreground when providing data. Have fun and enjoy. "</string>
+</resources>
