@@ -25,18 +25,6 @@ class AgreeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agree)
 
-        Dexter.withContext(this)
-            .withPermissions(
-                Manifest.permission.ACTIVITY_RECOGNITION,
-                Manifest.permission.ACCESS_BACKGROUND_LOCATION,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
-            .withListener(object : MultiplePermissionsListener {
-                override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {}
-                override fun onPermissionRationaleShouldBeShown(p0: MutableList<PermissionRequest>?, p1: PermissionToken?) {}
-            })
-            .check()
-
         checkSettings()
 
         id_agree_battery_consent.setOnClickListener {
@@ -55,8 +43,21 @@ class AgreeActivity : AppCompatActivity() {
             nextActivity()
         }
 
-
+        id_allow_access_popup.setOnClickListener {
+            Dexter.withContext(this)
+                .withPermissions(
+                    Manifest.permission.ACTIVITY_RECOGNITION,
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION)
+                .withListener(object : MultiplePermissionsListener {
+                    override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {}
+                    override fun onPermissionRationaleShouldBeShown(p0: MutableList<PermissionRequest>?, p1: PermissionToken?) {}
+                })
+                .check()
+        }
     }
+
 
     fun checkConsent() {
         if (id_agree_battery_consent.isChecked && id_agree_data_consent.isChecked && id_agree_permissions_consent.isChecked) {

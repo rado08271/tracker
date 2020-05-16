@@ -30,6 +30,17 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <TextView
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:id="@+id/id_allow_access_popup"
+            android:text="@string/string_allow_access_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
         <CheckBox
             android:textSize="16sp"
             android:layout_width="match_parent"

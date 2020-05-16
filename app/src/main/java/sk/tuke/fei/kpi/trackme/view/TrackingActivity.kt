@@ -1,5 +1,6 @@
 package sk.tuke.fei.kpi.trackme.view
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -9,9 +10,12 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.gms.location.ActivityTransitionEvent
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.*
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import kotlinx.android.synthetic.main.activiy_tracking.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -39,6 +43,18 @@ class TrackingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activiy_tracking)
+
+        Dexter.withContext(this)
+            .withPermissions(
+                Manifest.permission.ACTIVITY_RECOGNITION,
+                Manifest.permission.ACCESS_BACKGROUND_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION)
+            .withListener(object : MultiplePermissionsListener {
+                override fun onPermissionsChecked(p0: MultiplePermissionsReport?) {}
+                override fun onPermissionRationaleShouldBeShown(p0: MutableList<PermissionRequest>?, p1: PermissionToken?) {}
+            })
+            .check()
 
         locationService = Intent(this.application, BackgroundLocationService::class.java)
         startForegroundService(intent);
@@ -79,6 +95,7 @@ class TrackingActivity : AppCompatActivity() {
             initLocationTracking()
             id_start_background_button.isEnabled = false
             id_stop_background_button.isEnabled = true
+            id_currently_working.text = CacheManager.getValue(applicationContext, Constants.CACHE_CURRENT_STATE, "")
         }
     }
 
@@ -94,7 +111,7 @@ class TrackingActivity : AppCompatActivity() {
 
     fun changedBehaviour(activities: List<ActivityTransitionEvent>) {
         for (i in activities) {
-            if (i.transitionType == 1) {
+            if (i.transitionType == ActivityTransition.ACTIVITY_TRANSITION_ENTER) {
                 CacheManager.addToCache(applicationContext, Constants.CACHE_CURRENT_STATE, MovementUtils.getActivityString(i.activityType, applicationContext))
                 id_currently_working.text = MovementUtils.getActivityString(i.activityType, applicationContext)
             }
@@ -126,7 +143,7 @@ class TrackingActivity : AppCompatActivity() {
             if (!state.equals(resources.getString(R.string.string_state_unknown))) {
                 // TODO person is moving...
                 if (!(state.equals(resources.getString(R.string.string_state_still))
-                            && (timeChange > Constants.INACTIVE_MAX_INTERVAL))) {
+                        && (timeChange > Constants.INACTIVE_MAX_INTERVAL))) {
                     viewModel.pushRoute()
                 } else {
                     id_currently_working.text = getString(R.string.string_data_not_collected_currently)
